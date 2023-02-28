@@ -5,5 +5,6 @@ WORKDIR /
 
 RUN go env -w GOPROXY=$goproxy
 
-COPY go.mod go.sum ./
+COPY go.mod go.sum main.go ./
 RUN go mod download
+RUN go run main.go
